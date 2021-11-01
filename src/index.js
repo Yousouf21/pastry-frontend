@@ -11,3 +11,4 @@ import './scss/master.scss'
 document.addEventListener('DOMContentLoaded', () => {
   App.init()
 })
+

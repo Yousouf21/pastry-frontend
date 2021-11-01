@@ -67,7 +67,7 @@ class Auth {
        gotoRoute('/guide')
     }else{
       // returning user - redirecting to the home page {/}
-      gotoRoute('/')
+      gotoRoute('/log')
     }
 
   }

@@ -1924,7 +1924,7 @@ exports.default = void 0;
 var _litHtml = require("lit-html");
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n\n  <div class=\"app-splash\">\n    <div class=\"inner\">\n      <img class=\"app-logo\" src=\"/images/logo.svg\" />\n      <sl-spinner style=\"font-size: 2em;\"></sl-spinner>\n    </div>\n  </div>\n"]);
+  const data = _taggedTemplateLiteral(["\n\n  <div class=\"app-splash\">\n    <div class=\"inner\">\n      <img class=\"app-logo\" src=\"/images/logo.png\" />\n      <sl-spinner style=\"font-size: 2em;\"></sl-spinner>\n    </div>\n  </div>\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -7552,7 +7552,7 @@ class Auth {
       (0, _Router.gotoRoute)('/guide');
     } else {
       // returning user - redirecting to the home page {/}
-      (0, _Router.gotoRoute)('/');
+      (0, _Router.gotoRoute)('/log');
     }
   }
 
@@ -7667,20 +7667,20 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _App = _interopRequireDefault(require("./../../App"));
+var _App = _interopRequireDefault(require("../../App"));
 
 var _litHtml = require("lit-html");
 
-var _Router = require("./../../Router");
+var _Router = require("../../Router");
 
-var _Auth = _interopRequireDefault(require("./../../Auth"));
+var _Auth = _interopRequireDefault(require("../../Auth"));
 
-var _Utils = _interopRequireDefault(require("./../../Utils"));
+var _Utils = _interopRequireDefault(require("../../Utils"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Home\" user=", "></va-app-header>\n      \n      <div class=\"page-content\">\n        <h1 class=\"anim-in\">Hey ", "</h1>\n\n        <br>\n        <h2>Welcome to 'La Maison' where all your sweet dreams come true!<br>Please go to our pastries section to make orders!</h2>\n\n        \n\n\n\n      </div>\n     \n    "]);
+  const data = _taggedTemplateLiteral(["\n    \n<style>  \nbody  \n{  \nbackground-image:url(\"/images/bg.jpg\");  \nbackground-repeat: no-repeat;\nbackground-attachment: fixed;\nbackground-size: cover;\nposition: relative;\nmax-width: 100%;\nmargin: 0px;\npadding: 0;\n}  \n</style>  \n      <va-app-header title=\"Home\" user=", "></va-app-header>\n   \n      <nav>\n      <ul>\n        <img id=\"log\" src=\"/images/logo.png\" />\n        <li><a href=\"#plants\">Plants</a></li>\n        <li>\n          <a href=\"#best-plants\">Best Sellers</a>\n        </li>\n        <li><a href=\"#about\">About Us</a></li>\n        <li><a href=\"#contact\">Contact</a></li>\n        <li><a @click=\"", "\">Sign In</a></li>\n\n      </ul>\n    </nav>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/1.jpeg\" width=\"300px\">\n    <h2>Peperomia Polybotra $10</h2>\n\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/2.jpeg\" width=\"300px\">\n    <h2>Peperomia Polybotra $10</h2>\n\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/3.jpeg\" width=\"300px\">\n    <h2>Peperomia Polybotra $10</h2>\n\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/4.jpeg\" width=\"300px\">\n    <h2>Peperomia Polybotra $10</h2>\n\n        \n\n    </sl-card>\n\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/5.jpeg\" width=\"300px\">\n    <h2>Peperomia Polybotra $10</h2>\n        \n\n    </sl-card>\n\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/14.jpeg\" width=\"300px\">\n    <h2>Peperomia Polybotra $10</h2>\n\n        \n\n    </sl-card>\n\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/7.jpeg\" width=\"300px\">\n    <h2>Peperomia Polybotra $10</h2>\n\n        \n\n    </sl-card>\n  \n        <sl-card>\n    <img class=\"orders\" src=\"/images/13.jpeg\" width=\"300px\">\n    <h2>Peperomia Polybotra $10</h2>\n\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/10.jpeg\" width=\"300px\">\n    <h2>Peperomia Polybotra $10</h2>\n\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/11.jpeg\" width=\"300px\">\n    <h2>Peperomia Polybotra $10</h2>\n\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/12.jpeg\" width=\"300px\">\n    <h2>Peperomia Polybotra $10</h2>\n\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/15.jpeg\" width=\"300px\">\n    <h2>Peperomia Polybotra $10</h2>\n\n        \n\n    </sl-card>\n     \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -7691,7 +7691,7 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-class HomeView {
+class BuyView {
   init() {
     console.log('HomeView.init');
     document.title = 'Home';
@@ -7701,16 +7701,67 @@ class HomeView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.firstName);
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), () => (0, _Router.gotoRoute)('/signin'));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
 }
 
-var _default = new HomeView();
+var _default = new BuyView();
 
 exports.default = _default;
-},{"./../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","./../../Router":"Router.js","./../../Auth":"Auth.js","./../../Utils":"Utils.js"}],"views/pages/404.js":[function(require,module,exports) {
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/home copy.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("../../App"));
+
+var _litHtml = require("lit-html");
+
+var _Router = require("../../Router");
+
+var _Auth = _interopRequireDefault(require("../../Auth"));
+
+var _Utils = _interopRequireDefault(require("../../Utils"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  const data = _taggedTemplateLiteral(["\n    \n<style>  \nbody  \n{  \nbackground-image:url(\"/images/bg.jpg\");  \nbackground-repeat: no-repeat;\nbackground-attachment: fixed;\nbackground-size: cover;\nposition: relative;\nmax-width: 100%;\nmargin: 0px;\npadding: 0;\n}  \n</style>  \n      <va-app-header title=\"Home\" user=", "></va-app-header>\n   \n      <nav>\n      <ul>\n        <img id=\"log\" src=\"/images/logo.png\" />\n        <li><a href=\"#plants\">Plants</a></li>\n        <li>\n          <a href=\"#best-plants\">Best Sellers</a>\n        </li>\n        <li><a href=\"#about\">About Us</a></li>\n        <li><a href=\"#contact\">Contact</a></li>\n        <li><a @click=\"", "\">Sign In</a></li>\n        <sl-dropdown>\n        <a slot=\"trigger\" href=\"#\" @click=\"", "\">\n          <sl-avatar style=\"--size: 5vw;\" image=", "></sl-avatar> ", "\n        </a>\n        <sl-menu>            \n          <sl-menu-item @click=\"", "\">Profile</sl-menu-item>\n          <sl-menu-item @click=\"", "\">Sign Out</sl-menu-item>\n        </sl-menu>\n      </sl-dropdown>\n      </ul>\n    </nav>\n\n    <va-pastry>\n   \n    </va-pastry>\n\n     \n    "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+class LogbuyView {
+  init() {
+    console.log('HomeView.init');
+    document.title = 'Home';
+    this.render();
+
+    _Utils.default.pageIntroAnim();
+  }
+
+  render() {
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), () => (0, _Router.gotoRoute)('/signin'), e => e.preventDefault(), this.user && this.user.avatar ? "".concat(_App.default.apiBase, "/images/").concat(this.user.avatar) : '', this.user && this.user.firstName, () => (0, _Router.gotoRoute)('/profile'), () => _Auth.default.signOut());
+    (0, _litHtml.render)(template, _App.default.rootEl);
+  }
+
+}
+
+var _default = new LogbuyView();
+
+exports.default = _default;
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/404.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7722,10 +7773,16 @@ var _App = _interopRequireDefault(require("./../../App"));
 
 var _litHtml = require("lit-html");
 
+var _Router = require("./../../Router");
+
+var _Auth = _interopRequireDefault(require("../../Auth"));
+
+var _Utils = _interopRequireDefault(require("../../Utils"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["    \n      <div class=\"calign\">\n        <h1>Opps!</h1>\n        <p>Sorry, we couldn't find that.</p>\n      </div>\n    "]);
+  const data = _taggedTemplateLiteral(["  \n    <style>  \n    body  \n    {  \n    background-image:url(\"/images/bg.jpg\");  \n    background-repeat: no-repeat;\n    background-attachment: fixed;\n    background-size: cover;\n    max-width: 100%;\n    margin: 0px;\n    padding: 0;\n    }  \n    </style>   \n     \n        <h4>Go to our login page!</h4><br>\n        <p>Click <a href=\"/signin\" @click=", ">Here</a></p>\n      \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -7744,7 +7801,7 @@ class FourOFourView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject());
+    const template = (0, _litHtml.html)(_templateObject(), _Router.anchorRoute);
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -7753,7 +7810,7 @@ class FourOFourView {
 var _default = new FourOFourView();
 
 exports.default = _default;
-},{"./../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js"}],"views/pages/signin.js":[function(require,module,exports) {
+},{"./../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","./../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/signin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7761,20 +7818,20 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _App = _interopRequireDefault(require("./../../App"));
+var _App = _interopRequireDefault(require("../../App"));
 
 var _litHtml = require("lit-html");
 
 var _Router = require("./../../Router");
 
-var _Auth = _interopRequireDefault(require("./../../Auth"));
+var _Auth = _interopRequireDefault(require("../../Auth"));
 
-var _Utils = _interopRequireDefault(require("./../../Utils"));
+var _Utils = _interopRequireDefault(require("../../Utils"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["      \n      <div class=\"page-content page-centered\">\n        <div class=\"signinup-box\">\n          <img class=\"signinup-logo\" src=\"/images/logo.svg\">          \n          <sl-form class=\"form-signup dark-theme\" @sl-submit=", ">          \n            <div class=\"input-group\">\n              <sl-input name=\"email\" type=\"email\" placeholder=\"Email\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"password\" type=\"password\" placeholder=\"Password\" required toggle-password></sl-input>\n            </div>\n            <sl-button class=\"submit-btn\" type=\"primary\" submit style=\"width: 100%;\">Sign In</sl-button>\n          </sl-form>\n          <p>No Account? <a href=\"/signup\" @click=", ">Sign Up</a></p>\n        </div>\n      </div>\n    "]);
+  const data = _taggedTemplateLiteral(["\n    <style>  \nbody  \n{  \nbackground-image:url(\"/images/bg.jpg\");  \nbackground-repeat: no-repeat;\nbackground-attachment: fixed;\nbackground-size: cover;\nmax-width: 100%;\nmargin: 0px;\npadding: 0;\n}  \n</style> \n    <div class=\"page-content page-centered\">\n      <div class=\"signinup-box\">\n        <img class=\"signinup-logo\" src=\"/images/logo.png\">          \n        <sl-form class=\"form-signup dark-theme\" @sl-submit=", ">          \n          <div class=\"input-group\">\n            <sl-input name=\"email\" type=\"email\" placeholder=\"Email\" required></sl-input>\n          </div>\n          <div class=\"input-group\">\n            <sl-input name=\"password\" type=\"password\" placeholder=\"Password\" required toggle-password></sl-input>\n          </div>\n          <sl-button class=\"submit-btn\" type=\"primary\" submit style=\"width: 100%;\">Sign In</sl-button>\n        </sl-form>\n        <p>No Account? <a href=\"/signup\" @click=", ">Sign Up</a></p>\n        <p>If you do not wish to create an account <a href=\"/test\" @click=", ">Log In</a></p>\n        <h5>(please note you will not be able to make purchases until you create an account.)</h5>\n      </div>\n    </div>\n\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -7806,7 +7863,7 @@ class SignInView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), this.signInSubmitHandler, _Router.anchorRoute);
+    const template = (0, _litHtml.html)(_templateObject(), this.signInSubmitHandler, _Router.anchorRoute, _Router.anchorRoute);
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -7815,7 +7872,7 @@ class SignInView {
 var _default = new SignInView();
 
 exports.default = _default;
-},{"./../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","./../../Router":"Router.js","./../../Auth":"Auth.js","./../../Utils":"Utils.js"}],"views/pages/signup.js":[function(require,module,exports) {
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","./../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/signup.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7836,7 +7893,7 @@ var _Utils = _interopRequireDefault(require("./../../Utils"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["      \n      <div class=\"page-content page-centered\">      \n        <div class=\"signinup-box\">\n        <img class=\"signinup-logo\" src=\"/images/logo.svg\">\n          <h1>Sign Up</h1>\n          <sl-form class=\"form-signup\" @sl-submit=", ">\n            <div class=\"input-group\">\n              <sl-input name=\"firstName\" type=\"text\" placeholder=\"First Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"lastName\" type=\"text\" placeholder=\"Last Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"email\" type=\"email\" placeholder=\"Email\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"password\" type=\"password\" placeholder=\"Password\" required toggle-password></sl-input>\n            </div>  \n            \n            <div class=\"input-group\">\n              <sl-select name=\"accessLevel\" placeholder=\"I am a ...\">\n                <sl-menu-item value=\"1\">Customer</sl-menu-item>\n                <sl-menu-item value=\"2\">Chef</sl-menu-item>\n              </sl-select>\n\n            </div>          \n            <sl-button type=\"primary\" class=\"submit-btn\" submit style=\"width: 100%;\">Sign Up</sl-button>\n          </sl-form>\n          <p>Have an account? <a href=\"/signin\" @click=", ">Sign In</a></p>\n        </div>\n      </div>\n    "]);
+  const data = _taggedTemplateLiteral(["     \n    <style>  \nbody  \n{  \nbackground-image:url(\"/images/bg.jpg\");  \nbackground-repeat: no-repeat;\nbackground-attachment: fixed;\nbackground-size: cover;\nmax-width: 100%;\nmargin: 0px;\npadding: 0;\n}  \n</style> \n\n      <div class=\"page-content page-centered\">      \n        <div class=\"signinup-box\">\n        <img class=\"signinup-logo\" src=\"/images/logo.png\">\n          \n          <sl-form class=\"form-signup\" @sl-submit=", ">\n            <div class=\"input-group\">\n              <sl-input name=\"firstName\" type=\"text\" placeholder=\"First Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"lastName\" type=\"text\" placeholder=\"Last Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"email\" type=\"email\" placeholder=\"Email\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"password\" type=\"password\" placeholder=\"Password\" required toggle-password></sl-input>\n            </div>  \n            \n            <div class=\"input-group\">\n              <sl-select name=\"accessLevel\" placeholder=\"I am a ... in plants\">\n                <sl-menu-item value=\"1\">Newbie</sl-menu-item>\n                <sl-menu-item value=\"2\">Expert</sl-menu-item>\n              </sl-select>\n\n            </div>          \n            <sl-button type=\"primary\" class=\"submit-btn\" submit style=\"width: 100%;\">Sign Up</sl-button>\n          </sl-form>\n          <p>Have an account? <a href=\"/signin\" @click=", ">Sign In</a></p>\n          <p>If you do not wish to create an account <a href=\"/test\" @click=", ">Log In</a></p>\n          <h5>(please note you will not be able to make purchases until you create an account.)</h5>\n          \n        </div>\n      </div>\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -7868,7 +7925,7 @@ class SignUpView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), this.signUpSubmitHandler, _Router.anchorRoute);
+    const template = (0, _litHtml.html)(_templateObject(), this.signUpSubmitHandler, _Router.anchorRoute, _Router.anchorRoute);
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -13948,7 +14005,7 @@ var _App = _interopRequireDefault(require("../../App"));
 
 var _litHtml = require("lit-html");
 
-var _Router = require("../../Router");
+var _Router = require("./../../Router");
 
 var _Auth = _interopRequireDefault(require("../../Auth"));
 
@@ -13961,7 +14018,7 @@ var _Toast = _interopRequireDefault(require("../../Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject4() {
-  const data = _taggedTemplateLiteral(["\n\n              <va-pastry class=\"pastry-card\"\n              id=\"", "\"\n              name=\"", "\" \n              description=\"", "\"\n              price=\"$", "\"\n              image=\"", "\"\n              >\n              </va-pastry>\n\n          "]);
+  const data = _taggedTemplateLiteral(["\n\n              <va-pastry class=\"pastry-card\"\n              id=\"", "\"\n              name=\"", "\" \n              description=\"", "\"\n              price=\"$", "\"\n              user=\"", "\"\n              image=\"", "\"\n              >\n              </va-pastry>\n\n          "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -14024,7 +14081,7 @@ class PastriesView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), this.pastries == null ? (0, _litHtml.html)(_templateObject2()) : (0, _litHtml.html)(_templateObject3(), this.pastries.map(pastry => (0, _litHtml.html)(_templateObject4(), pastry._id, pastry.name, pastry.description, pastry.price, pastry.image))));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), this.pastries == null ? (0, _litHtml.html)(_templateObject2()) : (0, _litHtml.html)(_templateObject3(), this.pastries.map(pastry => (0, _litHtml.html)(_templateObject4(), pastry._id, pastry.name, pastry.description, pastry.price, JSON.stringify(pastry.user), pastry.image))));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -14033,7 +14090,7 @@ class PastriesView {
 var _default = new PastriesView();
 
 exports.default = _default;
-},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../PastryAPI":"PastryAPI.js","../../Toast":"Toast.js"}],"views/pages/guide.js":[function(require,module,exports) {
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","./../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../PastryAPI":"PastryAPI.js","../../Toast":"Toast.js"}],"views/pages/guide.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14058,7 +14115,7 @@ var _Toast = _interopRequireDefault(require("../../Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Guide\" user=\"", "\"></va-app-header>\n      <div class=\"page-content calign\">\n\n      <h3 class=\"brand-color\">Welcome ", "!</h3>\n      <p>This is a quick tour to teach you the basics to buying your pastries!</p>\n\n      <h1>This app is here to help you place orders for your favorite pastries, please navigate to the orders section, Thank you and live your pastry dreams!</h1>\n      \n\n      \n      <sl-button type=\"primary\" @click=", ">Okay got it!</sl-button>\n        \n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n    \n<style>  \nbody  \n{  \nbackground-image:url(\"/images/bg.jpg\");  \nbackground-repeat: no-repeat;\nbackground-attachment: fixed;\nbackground-size: cover;\nposition: relative;\nmax-width: 100%;\nmargin: 0px;\npadding: 0;\n}  \n</style>  \n      <va-app-header title=\"Guide\" user=\"", "\"></va-app-header>\n      \n\n      <h4 class=\"brand-color\">Welcome ", "!</h4><br>\n      <p>This is a quick tour to teach you the basics to buying your plants!<br>This app is here to help you place orders for your favorite plants. Thank you and live your plant dreams!</p>\n      \n      <p class=\"tour\">Before you go buy out all the plants in Bloomscape, it\u2019s a good idea to ask yourself a few specific questions. These questions will help you choose the right plants for you. These three questions to ask yourself are:<br>\n\n      -What spots do I have available, or where do I want to put my plants?<br>\n      \n      -How bright is my home and these locations?<br>\n      \n      -How much time do I want to put into my houseplants?<br><br>\n      \n      Answering these three questions can save a lot of discouragement, because there are different plants that are suited to different skill levels and locations.</p>\n\n      <div class=\"got-it-btn\">\n      <sl-button type=\"primary\" @click=", ">Okay got it!</sl-button>\n      </div>          \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14092,7 +14149,7 @@ class GuideView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.firstName, () => (0, _Router.gotoRoute)('/'));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.firstName, () => (0, _Router.gotoRoute)('/log'));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -14101,7 +14158,107 @@ class GuideView {
 var _default = new GuideView();
 
 exports.default = _default;
-},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../UserAPI":"UserAPI.js","../../Toast":"Toast.js"}],"Router.js":[function(require,module,exports) {
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../UserAPI":"UserAPI.js","../../Toast":"Toast.js"}],"views/pages/test.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("../../App"));
+
+var _litHtml = require("lit-html");
+
+var _Router = require("./../../Router");
+
+var _Auth = _interopRequireDefault(require("../../Auth"));
+
+var _Utils = _interopRequireDefault(require("../../Utils"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Main Content\" user=\"", "\"></va-app-header>\n      <!DOCTYPE html>\n      <html lang=\"en\">\n\n<style>  \nbody  \n{  \nbackground-image:url(\"/images/bg.jpg\");  \nbackground-repeat: no-repeat;\nbackground-attachment: fixed;\nbackground-size: cover;\nposition: relative;\nmax-width: 100%;\nmargin: 0px;\npadding: 0;\n}  \n</style>  \n\n        <head>\n          <meta charset=\"UTF-8\" />\n          <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n          <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n          <script\n            type=\"module\"\n            src=\"https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.26/dist/shoelace/shoelace.esm.js\"\n          ></script>\n          <link rel=\"stylesheet\" href=\"styles.css\" />\n          <title>Document</title>\n        </head>\n      \n        <body>\n          <nav>\n            <ul>\n              <img id=\"log\" src=\"/images/logo.png\" />\n              <li><a href=\"/buy\" @click=", ">Plants</a></li>\n              <li>\n                <a href=\"#best-plants\">Best Sellers</a>\n              </li>\n              <li><a href=\"#about\">About Us</a></li>\n              <li><a href=\"#contact\">Contact</a></li>\n              <li><a href=\"/signin @click=", "\">Sign In</a></li>\n\n            </ul>\n          </nav>\n      \n          <h1>\"To plant a garden<br />is to believe<br />in tomorrow\"</h1>\n      \n          <div class=\"center\">\n            <div class=\"arrow\"></div>\n          </div>\n      \n\n      \n        <div class=\"best-sell\">\n          <div id=\"best-plants\">\n          <h2>Bestselling Plants</h2>\n          </div>\n          <img src=\"/images/1.jpeg\" class=\"plant1\" />\n          <img src=\"/images/2.jpeg\" class=\"plant2\" />\n          <img src=\"/images/3.jpeg\" class=\"plant3\" />\n      \n          <div class=\"box box1\">Peperomia Polybotra $10</div>\n          <div class=\"box box2\">Peace Lily $7</div>\n          <div class=\"box box3\">Philodendron Pink Princess $5</div>\n\n        </div>\n      \n\n      \n        <div id=\"spacer\"></div>\n          <div id=\"about\">\n            <h2>About Us</h2>\n          </div>\n      \n          <img src=\"/images/abt.jpg\" class=\"abtus\" />\n          <img src=\"/images/13.jpeg\" class=\"cont-plant2\" />\n      \n          <div id=\"contact\">\n            <h2>Contact Us</h2>\n          </div>\n      \n          <img src=\"/images/12.jpeg\" class=\"cont-plant\" />\n          <div class=\"container\">\n            <form action=\"/action_page.php\">\n              <label for=\"fname\"></label>\n              <div class=\"name\">\n                <input type=\"text\" id=\"name\" name=\"name\" placeholder=\"NAME\" />\n              </div>\n      \n              <label for=\"email\"></label>\n              <div class=\"email\">\n                <input type=\"text\" id=\"email\" name=\"email\" placeholder=\"EMAIL\" font-size=2vw />\n              </div>\n      \n              <label for=\"subject\"></label>\n              <div class=\"mssg\">\n                <textarea\n                  id=\"subject\"\n                  name=\"subject\"\n                  placeholder=\"MESSAGE\"\n                  style=\"height: 15.5vw\"\n                ></textarea>\n              </div>\n              <div class=\"submt\">\n                <input type=\"submit\" value=\"Contact Us\" />\n              </div>\n            </form>\n          </div>\n          <br /><br />\n\n          <div class=\"scrolltop-wrap\">\n          <a href=\"#\" role=\"button\" aria-label=\"Scroll to top\">\n              <svg height=\"48\" viewBox=\"0 0 48 48\" width=\"48\" height=\"48px\" xmlns=\"http://www.w3.org/2000/svg\">\n                  <path id=\"scrolltop-bg\" d=\"M0 0h48v48h-48z\"></path>\n                  <path id=\"scrolltop-arrow\" d=\"M14.83 30.83l9.17-9.17 9.17 9.17 2.83-2.83-12-12-12 12z\"></path>\n              </svg>\n          </a>\n        </div>\n      \n          <script src=\"main.js\"></script>\n        </body>\n      </html>\n          \n    "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+class TestView {
+  init() {
+    document.title = 'Test';
+    this.render();
+
+    _Utils.default.pageIntroAnim();
+  }
+
+  render() {
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Router.anchorRoute, _Router.anchorRoute);
+    (0, _litHtml.render)(template, _App.default.rootEl);
+  }
+
+}
+
+var _default = new TestView();
+
+exports.default = _default;
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","./../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/loggedin.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("../../App"));
+
+var _litHtml = require("lit-html");
+
+var _Router = require("../../Router");
+
+var _Auth = _interopRequireDefault(require("../../Auth"));
+
+var _Utils = _interopRequireDefault(require("../../Utils"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  const data = _taggedTemplateLiteral(["\n    <va-app-header title=\"Main Content Logged In\" user=\"", "\"></va-app-header>\n    <!DOCTYPE html>\n    <html lang=\"en\">\n\n<style>  \nbody  \n{  \nbackground-image:url(\"/images/bg.jpg\");  \nbackground-repeat: no-repeat;\nbackground-attachment: fixed;\nbackground-size: cover;\nposition: relative;\nmax-width: 100%;\nmargin: 0px;\npadding: 0;\n}  \n</style>  \n\n      <head>\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n        <script\n          type=\"module\"\n          src=\"https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.26/dist/shoelace/shoelace.esm.js\"\n        ></script>\n        <link rel=\"stylesheet\" href=\"styles.css\" />\n        <title>Document</title>\n      </head>\n    \n      <body>\n        <nav>\n          <ul>\n            <img id=\"log\" src=\"/images/logo.png\" />\n            <li><a href=\"/logbuy\" @click=", ">Buy</a></li>\n            <li>\n              <a href=\"#best-plants\">Best Sellers</a>\n            </li>\n            <li><a href=\"#about\">About Us</a></li>\n            <li><a href=\"#contact\">Contact</a></li>\n            <li><a href=\"/server.js\">Sign In</a></li>\n            <sl-dropdown>\n            <a slot=\"trigger\" href=\"#\" @click=\"", "\">\n              <sl-avatar style=\"--size: 5vw;\" image=", "></sl-avatar> ", "\n            </a>\n            <sl-menu>            \n              <sl-menu-item @click=\"", "\">Profile</sl-menu-item>\n              <sl-menu-item @click=\"", "\">Sign Out</sl-menu-item>\n            </sl-menu>\n          </sl-dropdown>\n          </ul>\n        </nav>\n    \n        <h1>\"To plant a garden<br />is to believe<br />in tomorrow\"</h1>\n    \n        <div class=\"center\">\n          <div class=\"arrow\"></div>\n        </div>\n    \n\n    \n      <div class=\"best-sell\">\n        <div id=\"best-plants\">\n        <h2>Bestselling Plants</h2>\n        </div>\n        <img src=\"/images/1.jpeg\" class=\"plant1\" />\n        <img src=\"/images/2.jpeg\" class=\"plant2\" />\n        <img src=\"/images/3.jpeg\" class=\"plant3\" />\n    \n        <div class=\"box box1\">Peperomia Polybotra $10</div>\n        <div class=\"box box2\">Peace Lily $7</div>\n        <div class=\"box box3\">Philodendron Pink Princess $5</div>\n\n      </div>\n    \n\n    \n      <div id=\"spacer\"></div>\n        <div id=\"about\">\n          <h2>About Us</h2>\n        </div>\n    \n        <img src=\"/images/abt.jpg\" class=\"abtus\" />\n        <img src=\"/images/13.jpeg\" class=\"cont-plant2\" />\n    \n        <div id=\"contact\">\n          <h2>Contact Us</h2>\n        </div>\n    \n        <img src=\"/images/12.jpeg\" class=\"cont-plant\" />\n        <div class=\"container\">\n          <form action=\"/action_page.php\">\n            <label for=\"fname\"></label>\n            <div class=\"name\">\n              <input type=\"text\" id=\"name\" name=\"name\" placeholder=\"NAME\" />\n            </div>\n    \n            <label for=\"email\"></label>\n            <div class=\"email\">\n              <input type=\"text\" id=\"email\" name=\"email\" placeholder=\"EMAIL\" font-size=2vw />\n            </div>\n    \n            <label for=\"subject\"></label>\n            <div class=\"mssg\">\n              <textarea\n                id=\"subject\"\n                name=\"subject\"\n                placeholder=\"MESSAGE\"\n                style=\"height: 15.5vw\"\n              ></textarea>\n            </div>\n            <div class=\"submt\">\n              <input type=\"submit\" value=\"Contact Us\" />\n            </div>\n          </form>\n        </div>\n        <br /><br />\n\n        <div class=\"scrolltop-wrap\">\n        <a href=\"#\" role=\"button\" aria-label=\"Scroll to top\">\n            <svg height=\"48\" viewBox=\"0 0 48 48\" width=\"48\" height=\"48px\" xmlns=\"http://www.w3.org/2000/svg\">\n                <path id=\"scrolltop-bg\" d=\"M0 0h48v48h-48z\"></path>\n                <path id=\"scrolltop-arrow\" d=\"M14.83 30.83l9.17-9.17 9.17 9.17 2.83-2.83-12-12-12 12z\"></path>\n            </svg>\n        </a>\n      </div>\n    \n        <script src=\"main.js\"></script>\n      </body>\n    </html>  \n    "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+class LogView {
+  init() {
+    document.title = 'Template';
+    this.render();
+
+    _Utils.default.pageIntroAnim();
+  }
+
+  render() {
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Router.anchorRoute, e => e.preventDefault(), this.user && this.user.avatar ? "".concat(_App.default.apiBase, "/images/").concat(this.user.avatar) : '', this.user && this.user.firstName, () => (0, _Router.gotoRoute)('/profile'), () => _Auth.default.signOut());
+    (0, _litHtml.render)(template, _App.default.rootEl);
+  }
+
+}
+
+var _default = new LogView();
+
+exports.default = _default;
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"Router.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14112,6 +14269,8 @@ exports.anchorRoute = anchorRoute;
 exports.default = void 0;
 
 var _home = _interopRequireDefault(require("./views/pages/home"));
+
+var _homeCopy = _interopRequireDefault(require("./views/pages/home copy"));
 
 var _ = _interopRequireDefault(require("./views/pages/404"));
 
@@ -14127,19 +14286,26 @@ var _pastries = _interopRequireDefault(require("./views/pages/pastries"));
 
 var _guide = _interopRequireDefault(require("./views/pages/guide"));
 
+var _test = _interopRequireDefault(require("./views/pages/test"));
+
+var _loggedin = _interopRequireDefault(require("./views/pages/loggedin"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import views
 // define routes
 const routes = {
-  '/': _home.default,
+  '/buy': _home.default,
+  '/logbuy': _homeCopy.default,
+  '/test': _test.default,
   '/guide': _guide.default,
   '/pastries': _pastries.default,
   '404': _.default,
   '/signin': _signin.default,
   '/signup': _signup.default,
   '/profile': _profile.default,
-  '/editProfile': _editProfile.default
+  '/editProfile': _editProfile.default,
+  '/log': _loggedin.default
 };
 
 class Router {
@@ -14193,7 +14359,7 @@ function anchorRoute(e) {
   const pathname = e.target.closest('a').pathname;
   AppRouter.gotoRoute(pathname);
 }
-},{"./views/pages/home":"views/pages/home.js","./views/pages/404":"views/pages/404.js","./views/pages/signin":"views/pages/signin.js","./views/pages/signup":"views/pages/signup.js","./views/pages/profile":"views/pages/profile.js","./views/pages/editProfile":"views/pages/editProfile.js","./views/pages/pastries":"views/pages/pastries.js","./views/pages/guide":"views/pages/guide.js"}],"App.js":[function(require,module,exports) {
+},{"./views/pages/home":"views/pages/home.js","./views/pages/home copy":"views/pages/home copy.js","./views/pages/404":"views/pages/404.js","./views/pages/signin":"views/pages/signin.js","./views/pages/signup":"views/pages/signup.js","./views/pages/profile":"views/pages/profile.js","./views/pages/editProfile":"views/pages/editProfile.js","./views/pages/pastries":"views/pages/pastries.js","./views/pages/guide":"views/pages/guide.js","./views/pages/test":"views/pages/test.js","./views/pages/loggedin":"views/pages/loggedin.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14223,7 +14389,7 @@ class App {
 
     _Toast.default.init();
 
-    _Toast.default.show("Our goodies are awaiting!"); // Authentication check    
+    _Toast.default.show("Our plants are awaiting!"); // Authentication check    
 
 
     _Auth.default.check(() => {
@@ -16000,18 +16166,8 @@ var _App = _interopRequireDefault(require("./../App"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _templateObject2() {
-  const data = _taggedTemplateLiteral(["\n          <h1 class=\"page-title\">", "</h1>\n        "]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n    <style>      \n      * {\n        box-sizing: border-box;\n      }\n      .app-header {\n        background: var(--brand-color);\n        position: fixed;\n        top: 0;\n        right: 0;\n        left: 0;\n        height: var(--app-header-height);\n        color: #fff;\n        display: flex;\n        z-index: 9;\n        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);\n        align-items: center;\n      }\n      \n\n      .app-header-main {\n        flex-grow: 1;\n        display: flex;\n        align-items: center;\n      }\n\n      .app-header-main::slotted(h1){\n        color: #fff;\n      }\n\n      .app-logo a {\n        color: #fff;\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.2em;\n        padding: .6em;\n        display: inline-block;        \n      }\n\n      .app-logo img {\n        width: 90px;\n      }\n      \n      .hamburger-btn::part(base) {\n        color: #fff;\n      }\n\n      .app-top-nav {\n        display: flex;\n        height: 100%;\n        align-items: center;\n      }\n\n      .app-top-nav a {\n        display: inline-block;\n        padding: .8em;\n        text-decoration: none;\n        color: #fff;\n      }\n      \n      .app-side-menu-items a {\n        display: block;\n        padding: .5em;\n        text-decoration: none;\n        font-size: 1.3em;\n        color: #333;\n      }\n\n      .app-side-menu-logo {\n        padding-left: 4vw;\n        width: 120px;\n        margin-bottom: 1em;\n        position: absolute;\n        top: 2em;\n        left: 1.5em;\n      }\n\n      .page-title {\n        color: var(--app-header-txt-color);\n        margin-right: 0.5em;\n        font-size: var(--app-header-title-font-size);\n      }\n\n      /* active nav links */\n      .app-top-nav a.active,\n      .app-side-menu-items a.active {\n        font-weight: bold;\n      }\n\n      /* RESPONSIVE - MOBILE ------------------- */\n      @media all and (max-width: 768px){       \n        \n        .app-top-nav {\n          display: none;\n        }\n      }\n\n    </style>\n\n    <header class=\"app-header\">\n      <sl-icon-button class=\"hamburger-btn\" name=\"list\" @click=\"", "\" style=\"font-size: 1.5em;\"></sl-icon-button>       \n      \n      <div class=\"app-header-main\">\n        ", "\n        <slot></slot>\n      </div>\n\n      <nav class=\"app-top-nav\">\n        <a href=\"/\" @click=\"", "\">Home</a>        \n        <sl-dropdown>\n          <a slot=\"trigger\" href=\"#\" @click=\"", "\">\n            <sl-avatar style=\"--size: 24px;\" image=", "></sl-avatar> ", "\n          </a>\n          <sl-menu>            \n            <sl-menu-item @click=\"", "\">Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Edit Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Sign Out</sl-menu-item>\n          </sl-menu>\n        </sl-dropdown>\n      </nav>\n    </header>\n\n    <sl-drawer class=\"app-side-menu\" placement=\"left\">\n      <img class=\"app-side-menu-logo\" src=\"/images/logo.svg\">\n      <nav class=\"app-side-menu-items\">\n        <a href=\"/\" @click=\"", "\">Home</a>\n        <a href=\"/pastries\" @click=\"", "\">Pastries</a>\n        <a href=\"/profile\" @click=\"", "\">Profile</a>\n        <a href=\"#\" @click=\"", "\">Sign Out</a>\n      </nav>  \n    </sl-drawer>\n    "]);
+  const data = _taggedTemplateLiteral(["\n    <style>      \n      * {\n        box-sizing: border-box;\n      }\n      .app-header {\n        background: var(--brand-color);\n        position: fixed;\n        top: 0;\n        right: 0;\n        left: 0;\n        height: var(--app-header-height);\n        color: #fff;\n        display: flex;\n        z-index: 9;\n        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);\n        align-items: center;\n      }\n      \n\n      .app-header-main {\n        flex-grow: 1;\n        display: flex;\n        align-items: center;\n      }\n\n      .app-header-main::slotted(h1){\n        color: #fff;\n      }\n\n      .app-logo a {\n        color: #fff;\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.2em;\n        padding: .6em;\n        display: inline-block;        \n      }\n\n      .app-logo img {\n        width: 90px;\n      }\n      \n      .hamburger-btn::part(base) {\n        color: #fff;\n      }\n\n      .app-top-nav {\n        display: flex;\n        height: 100%;\n        align-items: center;\n      }\n\n      .app-top-nav a {\n        display: inline-block;\n        padding: .8em;\n        text-decoration: none;\n        color: #fff;\n      }\n      \n      .app-side-menu-items a {\n        display: block;\n        padding: .5em;\n        text-decoration: none;\n        font-size: 1.3em;\n        color: #333;\n      }\n\n      .app-side-menu-logo {\n        padding-left: 4vw;\n        width: 120px;\n        margin-bottom: 1em;\n        position: absolute;\n        top: 2em;\n        left: 1.5em;\n      }\n\n      .page-title {\n        color: var(--app-header-txt-color);\n        margin-right: 0.5em;\n        font-size: var(--app-header-title-font-size);\n      }\n\n      /* active nav links */\n      .app-top-nav a.active,\n      .app-side-menu-items a.active {\n        font-weight: bold;\n      }\n\n\n    </style>   \n      \n\n\n\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -16073,7 +16229,7 @@ customElements.define('va-app-header', class AppHeader extends _litElement.LitEl
   }
 
   render() {
-    return (0, _litElement.html)(_templateObject(), this.hamburgerClick, this.title ? (0, _litElement.html)(_templateObject2(), this.title) : "", _Router.anchorRoute, e => e.preventDefault(), this.user && this.user.avatar ? "".concat(_App.default.apiBase, "/images/").concat(this.user.avatar) : '', this.user && this.user.firstName, () => (0, _Router.gotoRoute)('/profile'), () => (0, _Router.gotoRoute)('/editProfile'), () => _Auth.default.signOut(), this.menuClick, this.menuClick, this.menuClick, () => _Auth.default.signOut());
+    return (0, _litElement.html)(_templateObject());
   }
 
 });
@@ -16097,7 +16253,7 @@ var _Toast = _interopRequireDefault(require("./../Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject2() {
-  const data = _taggedTemplateLiteral(["\n\n\n    <sl-card>\n        <img slot=\"image\" src=\"", "/images/", "\" />\n        <h2>", "</h2>\n        <h3>", "</h3>\n        \n        <sl-button @click=", ">Info & Order</sl-button>\n        \n\n    </sl-card>\n  \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <style>\n      \n  .wrap {\n    display: flex;\n  }\n\n\n\n\n</style>\n\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/1.jpeg\" width=\"300px\">\n    <h2>Peperomia Polybotra $10</h2>\n\n        <h2 style=\"buycard\">", "</h2>\n        <h3 style=\"buycard\">", "</h3>\n        \n        <sl-button @click=", ">Info & Order</sl-button>\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/2.jpeg\" width=\"300px\">\n    <h2>Kolkwitzia amabilis $15</h2>\n\n        <h2 style=\"buycard\">", "</h2>\n        <h3 style=\"buycard\">", "</h3>\n        \n        <sl-button @click=", ">Info & Order</sl-button>\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/3.jpeg\" width=\"300px\">\n    <h2>\tPlatycodon grandiflorus $10</h2>\n\n        <h2 style=\"buycard\">", "</h2>\n        <h3 style=\"buycard\">", "</h3>\n        \n        <sl-button @click=", ">Info & Order</sl-button>\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/4.jpeg\" width=\"300px\">\n    <h2>Sutera cordata $19</h2>\n\n        <h2 style=\"buycard\">", "</h2>\n        <h3 style=\"buycard\">", "</h3>\n        \n        <sl-button @click=", ">Info & Order</sl-button>\n        \n\n    </sl-card>\n\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/5.jpeg\" width=\"300px\">\n    <h2>Ageratum houstonianum $9</h2>\n\n        <h2 style=\"buycard\">", "</h2>\n        <h3 style=\"buycard\">", "</h3>\n        \n        <sl-button @click=", ">Info & Order</sl-button>\n        \n\n    </sl-card>\n\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/14.jpeg\" width=\"300px\">\n    <h2>Tagetes erecta $10</h2>\n\n        <h2 style=\"buycard\">", "</h2>\n        <h3 style=\"buycard\">", "</h3>\n        \n        <sl-button @click=", ">Info & Order</sl-button>\n        \n\n    </sl-card>\n\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/7.jpeg\" width=\"300px\">\n    <h2>Canna generalis $10</h2>\n\n        <h2 style=\"buycard\">", "</h2>\n        <h3 style=\"buycard\">", "</h3>\n        \n        <sl-button @click=", ">Info & Order</sl-button>\n        \n\n    </sl-card>\n  \n        <sl-card>\n    <img class=\"orders\" src=\"/images/13.jpeg\" width=\"300px\">\n    <h2>Dianthus chinensis $19</h2>\n\n        <h2 style=\"buycard\">", "</h2>\n        <h3 style=\"buycard\">", "</h3>\n        \n        <sl-button @click=", ">Info & Order</sl-button>\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/10.jpeg\" width=\"300px\">\n    <h2>Canna generalis $12</h2>\n\n        <h2 style=\"buycard\">", "</h2>\n        <h3 style=\"buycard\">", "</h3>\n        \n        <sl-button @click=", ">Info & Order</sl-button>\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/11.jpeg\" width=\"300px\">\n    <h2>Zinnia elegans $15</h2>\n\n        <h2 style=\"buycard\">", "</h2>\n        <h3 style=\"buycard\">", "</h3>\n        \n        <sl-button @click=", ">Info & Order</sl-button>\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/12.jpeg\" width=\"300px\">\n    <h2>Sanvitalia speciosa $10</h2>\n\n        <h2 style=\"buycard\">", "</h2>\n        <h3 style=\"buycard\">", "</h3>\n        \n        <sl-button @click=", ">Info & Order</sl-button>\n        \n\n    </sl-card>\n\n    <sl-card>\n    <img class=\"orders\" src=\"/images/15.jpeg\" width=\"300px\">\n    <h2>Miscanthus $5</h2>\n\n        <h2 style=\"buycard\">", "</h2>\n        <h3 style=\"buycard\">", "</h3>\n        \n        <sl-button @click=", ">Info & Order</sl-button>\n        \n\n    </sl-card>\n    "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -16107,7 +16263,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n  <style>\n  .wrap {\n    display: flex;\n  }\n  .image {\n    width: 50%;\n  }\n  .image img {\n    width: 100%;\n  }\n  .content {\n    padding-left: 1em;\n  }\n\n  .price {\n    font-size: 2vw;\n    color: var(--brand-color)\n  }\n\n\n</style>\n<div class=\"wrap\">\n  <div class=\"image\">\n    <img src=\"", "/images/", "\" alt=\"", "\" />\n  </div>\n  <div class=\"content\">\n    <h1>", "</h1>\n    <p>", "</p>\n    <p class=\"price\">", "</p>\n\n    <sl-button @click=", ">\n      Add to order\n    </sl-button>\n  </div>\n</div>\n"]);
+  const data = _taggedTemplateLiteral(["\n\n<div class=\"wrap\">\n\n  <div class=\"content\">\n  <h6>You can add the following plant to your orders</h6>\n\n    <sl-button @click=", ">\n      Add to order\n    </sl-button>\n  </div>\n</div>\n\n\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -16153,7 +16309,7 @@ customElements.define('va-pastry', class Pastry extends _litElement.LitElement {
   moreInfoHandler() {
     const dialogEl = document.createElement('sl-dialog');
     dialogEl.className = 'pastry-dialog';
-    const dialogContent = (0, _litElement.html)(_templateObject(), _App.default.apiBase, this.image, this.name, this.name, this.description, this.price, this.addOrdHandler.bind(this));
+    const dialogContent = (0, _litElement.html)(_templateObject(), this.addOrdHandler.bind(this));
     (0, _litHtml.render)(dialogContent, dialogEl);
     document.body.append(dialogEl);
     dialogEl.show(); // to prevent dialogues from clogging 
@@ -16174,7 +16330,7 @@ customElements.define('va-pastry', class Pastry extends _litElement.LitElement {
   }
 
   render() {
-    return (0, _litElement.html)(_templateObject2(), _App.default.apiBase, this.image, this.name, this.price, this.moreInfoHandler.bind(this));
+    return (0, _litElement.html)(_templateObject2(), this.name, this.price, this.moreInfoHandler.bind(this), this.name, this.price, this.moreInfoHandler.bind(this), this.name, this.price, this.moreInfoHandler.bind(this), this.name, this.price, this.moreInfoHandler.bind(this), this.name, this.price, this.moreInfoHandler.bind(this), this.name, this.price, this.moreInfoHandler.bind(this), this.name, this.price, this.moreInfoHandler.bind(this), this.name, this.price, this.moreInfoHandler.bind(this), this.name, this.price, this.moreInfoHandler.bind(this), this.name, this.price, this.moreInfoHandler.bind(this), this.name, this.price, this.moreInfoHandler.bind(this), this.name, this.price, this.moreInfoHandler.bind(this));
   }
 
 });
@@ -16297,7 +16453,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50242" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53657" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

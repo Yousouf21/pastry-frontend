@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.26/dist/shoelace/shoelace.esm.js"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <img id="log" src="/static/logo.png" />
+        <li><a href="#plants">Plants</a></li>
+        <li>
+          <a href="#best-plants">Best Sellers</a>
+        </li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/server.js">Sign In</a></li>
+      </ul>
+    </nav>
+
+    <h1>"To plant a garden<br />is to believe<br />in tomorrow"</h1>
+
+    <div class="center">
+      <div class="arrow"></div>
+    </div>
+
+    <div id="best-plants">
+      <h2>Bestselling Plants</h2>
+    </div>
+
+    <img src="/static//1.jpeg" class="plant1" />
+    <img src="/static//2.jpeg" class="plant2" />
+    <img src="/static//3.jpeg" class="plant3" />
+
+    <div class="box">Peperomia Polybotra</div>
+    <div class="box2">Peace Lily</div>
+    <div class="box3">Philodendron Pink Princess</div>
+    <div class="box4">$10</div>
+    <div class="box5">$10</div>
+    <div class="box6">$10</div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <div class="sale">
+      <div id="plants"></div>
+      <h2>Plants On-Sale</h2>
+      <h5>Here you can browse our plants available and make purchases</h5>
+    </div>
+    <div class="carousel-container">
+      <div class="mySlides animate">
+        <img src="/static/1.jpeg" class="plant-img" alt="slide" />
+
+        <div class="text">Lorem ipsum dolor sit amet consectetur</div>
+      </div>
+
+      <div class="mySlides animate">
+        <img src="/static/10.jpeg" class="plant-img" alt="slide" />
+
+        <div class="text">amet consectetur</div>
+      </div>
+
+      <div class="mySlides animate">
+        <img src="/static/11.jpeg" class="plant-img" alt="slide" />
+
+        <div class="text">Lorem ipsum dolor sit</div>
+      </div>
+
+      <div class="mySlides animate">
+        <img src="/static/13.jpeg" class="plant-img" alt="slide" />
+
+        <div class="text">Doloribus quo alias reprehenderit</div>
+      </div>
+
+      <div class="mySlides animate">
+        <img src="/static/12.jpeg" class="plant-img" alt="slide" />
+
+        <div class="text">Reprehenderit</div>
+      </div>
+
+      <div class="nextprev">
+        <a class="prev" onclick="prevSlide()">&#10094;</a>
+        <a class="next" onclick="nextSlide()">&#10095;</a>
+      </div>
+      <!-- The dots/circles -->
+      <div class="dots-container">
+        <span class="dots" onclick="currentSlide(1)"></span>
+        <span class="dots" onclick="currentSlide(2)"></span>
+        <span class="dots" onclick="currentSlide(3)"></span>
+        <span class="dots" onclick="currentSlide(4)"></span>
+        <span class="dots" onclick="currentSlide(5)"></span>
+      </div>
+    </div>
+
+    <br /><br />
+
+    <div id="about">
+      <h2>About Us</h2>
+    </div>
+
+    <img src="/static//abt.jpg" class="abtus" />
+    <img src="/static//11.jpeg" class="cont-plant2" />
+
+    <div id="contact">
+      <h2>Contact Us</h2>
+    </div>
+
+    <img src="/static//12.jpeg" class="cont-plant" />
+    <div class="container">
+      <form action="/action_page.php">
+        <label for="fname"></label>
+        <div class="name">
+          <input type="text" id="name" name="name" placeholder="NAME" />
+        </div>
+
+        <label for="email"></label>
+        <div class="email">
+          <input type="text" id="email" name="email" placeholder="EMAIL" />
+        </div>
+
+        <label for="subject"></label>
+        <div class="mssg">
+          <textarea
+            id="subject"
+            name="subject"
+            placeholder="MESSAGE"
+            style="height: 15.5vw"
+          ></textarea>
+        </div>
+        <div class="submt">
+          <input type="submit" value="Contact Us" />
+        </div>
+      </form>
+    </div>
+    <br /><br />
+
+    <script src="main.js"></script>
+  </body>
+</html>

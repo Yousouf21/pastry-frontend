@@ -1,5 +1,8 @@
 import App from './../../App'
 import {html, render } from 'lit-html'
+import {anchorRoute, gotoRoute} from './../../Router'
+import Auth from '../../Auth'
+import Utils from '../../Utils'
 
 class FourOFourView{
   init(){
@@ -9,11 +12,23 @@ class FourOFourView{
   }
 
   render(){
-    const template = html`    
-      <div class="calign">
-        <h1>Opps!</h1>
-        <p>Sorry, we couldn't find that.</p>
-      </div>
+    const template = html`  
+    <style>  
+    body  
+    {  
+    background-image:url("/images/bg.jpg");  
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    max-width: 100%;
+    margin: 0px;
+    padding: 0;
+    }  
+    </style>   
+     
+        <h4>Go to our login page!</h4><br>
+        <p>Click <a href="/signin" @click=${anchorRoute}>Here</a></p>
+      
     `
     render(template, App.rootEl)
   }

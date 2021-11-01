@@ -4,15 +4,14 @@
   // base
   --base-txt-color: #222;
   --heading-color: #333;
-  --base-font-family: 'Work Sans', sans-serif;
-  --body-bg: #fff;
-  
+  --base-font-family: "Work Sans", sans-serif;
+  --body-bg: rgb(142, 218, 214);
 
-  // colors  
-  $brand-color: #ff5100;
+  // colors
+  $brand-color: #2c4344;
   --brand-color: #{$brand-color};
   --link-color: --brand-color;
-  
+
   // app header
   --app-header-height: 60px;
   --app-header-txt-color: #fff;

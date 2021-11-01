@@ -1,6 +1,6 @@
 import App from '../../App'
 import {html, render } from 'lit-html'
-import {gotoRoute, anchorRoute} from '../../Router'
+import {gotoRoute, anchorRoute} from './../../Router'
 import Auth from '../../Auth'
 import Utils from '../../Utils'
 import PastryAPI from './../../PastryAPI'
@@ -42,6 +42,7 @@ class PastriesView {
               name="${pastry.name}" 
               description="${pastry.description}"
               price="$${pastry.price}"
+              user="${JSON.stringify(pastry.user)}"
               image="${pastry.image}"
               >
               </va-pastry>

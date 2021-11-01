@@ -142,50 +142,12 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         font-weight: bold;
       }
 
-      /* RESPONSIVE - MOBILE ------------------- */
-      @media all and (max-width: 768px){       
-        
-        .app-top-nav {
-          display: none;
-        }
-      }
 
-    </style>
-
-    <header class="app-header">
-      <sl-icon-button class="hamburger-btn" name="list" @click="${this.hamburgerClick}" style="font-size: 1.5em;"></sl-icon-button>       
+    </style>   
       
-      <div class="app-header-main">
-        ${this.title ? html`
-          <h1 class="page-title">${this.title}</h1>
-        `:``}
-        <slot></slot>
-      </div>
 
-      <nav class="app-top-nav">
-        <a href="/" @click="${anchorRoute}">Home</a>        
-        <sl-dropdown>
-          <a slot="trigger" href="#" @click="${(e) => e.preventDefault()}">
-            <sl-avatar style="--size: 24px;" image=${(this.user && this.user.avatar) ? `${App.apiBase}/images/${this.user.avatar}` : ''}></sl-avatar> ${this.user && this.user.firstName}
-          </a>
-          <sl-menu>            
-            <sl-menu-item @click="${() => gotoRoute('/profile')}">Profile</sl-menu-item>
-            <sl-menu-item @click="${() => gotoRoute('/editProfile')}">Edit Profile</sl-menu-item>
-            <sl-menu-item @click="${() => Auth.signOut()}">Sign Out</sl-menu-item>
-          </sl-menu>
-        </sl-dropdown>
-      </nav>
-    </header>
 
-    <sl-drawer class="app-side-menu" placement="left">
-      <img class="app-side-menu-logo" src="/images/logo.svg">
-      <nav class="app-side-menu-items">
-        <a href="/" @click="${this.menuClick}">Home</a>
-        <a href="/pastries" @click="${this.menuClick}">Pastries</a>
-        <a href="/profile" @click="${this.menuClick}">Profile</a>
-        <a href="#" @click="${() => Auth.signOut()}">Sign Out</a>
-      </nav>  
-    </sl-drawer>
+
     `
   }
   

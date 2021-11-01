@@ -18,7 +18,7 @@ class App {
     // Toast init
     Toast.init()   
 
-    Toast.show("Our goodies are awaiting!")
+    Toast.show("Our plants are awaiting!")
     
     // Authentication check    
     Auth.check(() => {
